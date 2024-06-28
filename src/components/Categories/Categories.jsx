@@ -9,7 +9,7 @@ const Categories = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('https://6valley.6amtech.com/api/v1/products');
+        const response = await fetch('https://6valley.6amtech.com/api/v1/products/top-rated?guest_id=1&limit=10&offset=1');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
@@ -30,7 +30,7 @@ const Categories = () => {
 
   return (
     <div>
-      <h1>Top Rated Products</h1>
+      <h1>Top Rated Products{products.length}</h1>
       <ul>
         {products.map((product) => (
           <Category  key={product.id}
