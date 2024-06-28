@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Category = () => {
+const Category = (product) => {
+    const {name} = product
     return (
         <div>
-            
+            {name}
         </div>
     );
 };
