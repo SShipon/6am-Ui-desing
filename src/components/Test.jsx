@@ -8,7 +8,7 @@ const Test = () => {
     useEffect(() => {
         fetch('data.json')
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data =>console.log(data))
     }, []);
   
    
@@ -16,7 +16,11 @@ const Test = () => {
         <div>
             <p>Product -------------{products.length}</p>
             {
-                
+                products.map(product =>{
+                    <div>
+                        <p>{product.name}</p>
+                    </div>
+                })
             }
         </div>
     );
