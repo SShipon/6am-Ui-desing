@@ -15,7 +15,7 @@ const Categories = () => {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-       console.log(data.products); // Assuming the API response structure
+        setProducts(data.products); // Assuming the API response structure
       } catch (error) {
         setError(error.message);
       } finally {
@@ -33,7 +33,12 @@ const Categories = () => {
     <div>
       <h1>Top Rated Products{products.length}</h1>
       <div className='grid grid-cols-5'>
-            
+          {
+            products.map(product =><Category
+            key={product}
+              product={product}
+            ></Category>)
+          }
       </div>
     </div>
   );
